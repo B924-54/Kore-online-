@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORE ONLINE</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef5ff, #f4edff);
+    color: #20243a;
+    min-height: 100vh;
+}
+
+header {
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 15px #0000000d;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    color: #5138bd;
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 20px 35px;
+}
+
+.badge {
+    display: inline-block;
+    background: #e4e0ff;
+    color: #5138bd;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.highlight {
+    color: #6544d5;
+}
+
+.hero p {
+    max-width: 450px;
+    margin: auto;
+    line-height: 1.7;
+    color: #62677a;
+}
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.primary {
+    color: white;
+    background: linear-gradient(135deg, #5138bd, #8b45e8);
+}
+
+.secondary {
+    background: white;
+    color: #5138bd;
+    border: 1px solid #ddd5ff;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    max-width: 850px;
+    padding: 20px;
+    margin: auto;
+}
+
+.feature {
+    background: white;
+    padding: 24px 15px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px #00000008;
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.feature h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #74798a;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.form-box {
+    display: none;
+    background: white;
+    max-width: 420px;
+    margin: 25px auto;
+    padding: 28px 22px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px #00000012;
+}
+
+.form-box h2 {
+    margin-bottom: 10px;
+    color: #5138bd;
+}
+
+.form-box p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #dedfeb;
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+}
+
+.form-box button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.message {
+    display: none;
+    padding: 12px;
+    margin-top: 15px;
+    background: #fff3cd;
+    color: #795600;
+    border-radius: 10px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #777;
+    font-size: 13px;
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .form-box {
+        margin: 20px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KORE ONLINE</div>
+</header>
+
+<section class="hero">
+    <span class="badge">VOTRE ESPACE EN LIGNE</span>
+
+    <h1>
+        Construisez votre<br>
+        <span class="highlight">réseau en ligne</span>
+    </h1>
+
+    <p>
+        Découvrez notre plateforme de parrainage
+        et d'affiliation. Créez votre compte et
+        accédez à votre espace personnel après validation.
+    </p>
+
+    <div class="buttons">
+        <button class="primary" onclick="showForm('register')">
+            Créer un compte
+        </button>
+
+        <button class="secondary" onclick="showForm('login')">
+            Se connecter
+        </button>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <div class="icon">👥</div>
+        <h3>Votre réseau</h3>
+        <p>Retrouvez vos parrainages dans votre espace membre.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">🔒</div>
+        <h3>Votre compte</h3>
+        <p>Un espace personnel réservé aux membres autorisés.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">📊</div>
+        <h3>Vos activités</h3>
+        <p>Consultez vos activités et vos commissions vérifiées.</p>
+    </div>
+</section>
+
+<section class="form-box" id="register">
+    <h2>Créer un compte</h2>
+    <p>Remplissez les informations demandées pour envoyer votre inscription.</p>
+
+    <form onsubmit="demoMessage(event, 'register')">
+        <input type="text" placeholder="Nom complet" required>
+        <input type="tel" placeholder="Numéro de téléphone" required>
+
+        <select required>
+            <option value="">Choisir votre pays</option>
+            <option>Bénin</option>
+            <option>Togo</option>
+            <option>Guinée</option>
+            <option>Guinée-Bissau</option>
+            <option>Guinée équatoriale</option>
+            <option>Côte d'Ivoire</option>
+            <option>Sénégal</option>
+            <option>Mali</option>
+            <option>Burkina Faso</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>Ghana</option>
+            <option>Cameroun</option>
+            <option>Autre pays</option>
+        </select>
+
+        <input type="email" placeholder="Adresse e-mail" required>
+        <input type="password" placeholder="Créer un mot de passe" required minlength="8">
+
+        <input type="text" id="referral" placeholder="Code de parrainage (facultatif)">
+
+        <button type="submit" class="primary">Envoyer mon inscription</button>
+    </form>
+
+    <div class="message" id="registerMessage">
+        Cette version est une démonstration. Votre inscription n'a pas encore été envoyée. Le système sécurisé doit être configuré.
+    </div>
+</section>
+
+<section class="form-box" id="login">
+    <h2>Connexion</h2>
+    <p>Connectez-vous à votre espace membre.</p>
+
+    <form onsubmit="demoMessage(event, 'login')">
+        <input type="email" placeholder="Adresse e-mail" required>
+        <input type="password" placeholder="Mot de passe" required>
+
+        <button type="submit" class="primary">Se connecter</button>
+    </form>
+
+    <div class="message" id="loginMessage">
+        La connexion n'est pas encore activée. Le système d'authentification doit être configuré.
+    </div>
+</section>
+
+<footer>
+    © 2026 KORE ONLINE — Tous droits réservés.
+</footer>
+
+<script>
+function showForm(id) {
+    document.querySelectorAll('.form-box').forEach(function(form) {
+        form.style.display = 'none';
+    });
+
+    const selected = document.getElementById(id);
+    selected.style.display = 'block';
+
+    selected.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+function demoMessage(event, type) {
+    event.preventDefault();
+
+    const message = document.getElementById(type + 'Message');
+    message.style.display = 'block';
+}
+</script>
+
+</body>
+  </html>
